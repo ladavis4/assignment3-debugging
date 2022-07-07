@@ -14,7 +14,7 @@ import org.junit.Test;
  * This class contains tests for readFile.
  * 
  * It relies on the "single.txt" and "multiple.txt" files, which should be in your project's
- * root director, or the directory where you started Java.
+ * root directory, or the directory where you started Java.
  * 
  * These tests are assumed to be sound and should pass on a correct implementation of this method.
  */

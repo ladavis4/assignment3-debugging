@@ -10,6 +10,9 @@ public class AnalyzerTest {
 	 * Because it uses the Analyzer(String) constructor, which calls calculateWordScores, which
 	 * calls readFile, this test executes all three of those methods.
 	 * 
+	 * Be sure that the "reviews.txt" file is in your project's root directory or the directory
+	 * where you started Java.
+	 * 
 	 * This test is assumed to be sound and should pass on a correct implementation of this program.
 	 */
 
