@@ -66,7 +66,7 @@ public class Analyzer {
 		
 		Set<Sentence> sentences = readFile(filename);
 		
-		Map<String, Double> map = null; 
+		Map<String, Double> map = new HashMap<>(); //Change here from lenny
 		
 		if (sentences == null || sentences.isEmpty()) return map;
 		
@@ -83,8 +83,10 @@ public class Analyzer {
 			
 			for (String word : words) {
 				word = word.toLowerCase();
+				if(Character.isLetter(word.charAt(0)) != true) continue; //Change here
 				if (count.containsKey(word)) {
 					count.put(word, count.get(word) + 1);
+					total.put(word, total.get(word) + score); //Change here
 				}
 				else {
 					count.put(word, 1);
@@ -110,12 +112,16 @@ public class Analyzer {
 				
 		String[] words = sentence.split(" ");
 		
-		int total = 0, count = 0;
+		float total = 0, count = 0; //Change here
 		
 		for (String word : words) {
+			word = word.toLowerCase(); //Change here
+			if(Character.isLetter(word.charAt(0)) != true) continue; //Change here
 			if (wordScores.containsKey(word)) {
 				count++;
 				total += wordScores.get(word);
+			} else {
+				count++;
 			}
 		}
 		
